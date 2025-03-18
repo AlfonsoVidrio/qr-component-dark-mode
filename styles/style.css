@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
+}
+
+:root {
+    --font-family: "Outfit", sans-serif;
+    --font-size-base: 15px;
+    --font-size-title: 22px;
+    --border-radius-card: 20px;
+    --border-radius-image: 10px;
+}
+
+.dark-theme {
+    --color-background: #242829;
+    --color-card-background: #131516;
+    --color-text: #ffffff;
+    --color-text-hover: #2c7dfa;
+    --color-description: #9c9385;
+    --color-background-button: #ffffff;
+    --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --gradient-start: #242829;
+    --gradient-end: #131516;
+}
+
+.light-theme {
+    --color-background: #d5e1ef;
+    --color-card-background: #ffffff;
+    --color-text: #1f314f;
+    --color-text-hover: #3685ff;
+    --color-description: #68778d;
+    --color-background-button: #3685ff;
+    --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --gradient-start: #E2E2E2;
+    --gradient-end: #C9D6FF;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-background);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+}
+
+.card__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    max-width: 320px;
+    max-height: 500px;
+    background-color: var(--color-card-background);
+    text-align: center;
+    padding: 16px;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-card);
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.card__image-container {
+    width: 288px;
+    height: 288px;
+    overflow: hidden;
+    border-radius: var(--border-radius-image);
+    margin-bottom: 8px;
+}
+
+.card__image {
+    width: 100%;
+    border-radius: var(--border-radius-image);
+    transition: transform 0.3s;
+}
+
+.card__image:hover {
+    transform: scale(1.5);
+}
+
+.card__content {
+    padding: 16px;
+}
+
+.card__title {
+    font-size: var(--font-size-title);
+    margin-bottom: 16px;
+    transition: color 0.3s;
+}
+
+.card__title:hover {
+    color: var(--color-text-hover);
+}
+
+.card__description {
+    color: var(--color-description);
+    letter-spacing: 0.2px;
+    transition: color 0.3s ease-in-out;
+}
+
+#theme-toggle {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: var(--color-background-button);
+    box-shadow: var(--shadow-card);
+    border-style: none;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
