@@ -18,7 +18,7 @@
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://alfonsovidrio.github.io/qr-component-dark-mode/)
+- Live Site URL: [QR component](https://alfonsovidrio.github.io/qr-component-dark-mode/)
 
 ## My process
 
